@@ -1,0 +1,280 @@
+{
+  "activity_shift_rule": "held-out protocol absent from model-fitting roles; seen-user activity and joint user-activity tests are distinct",
+  "artifact_sha256": {
+    "activity_shift_roles.csv": "c23fbd29f7177ce07c17ad3447685caebd3162aaffd7d8168037b8806e13b26b",
+    "fold_balance_audit.csv": "61a5744cc7208eb18cd60126f9f6c76cf7a9a04789dc902d2dbbc812c6f6a0a2",
+    "history_manifest.csv": "86c4dc0041c8a1b5c004c61093365e21f8ccf2b0ad407dcfdfc35be92dd7a38f",
+    "outer_fold_roles.csv": "7fa18b75579a8a9285afae642cac28075e6c2c3834dd3a95238723524c81f79f",
+    "participant_manifest.csv": "f8fa100a9276391dde9cc071499d7d1383224638f2a1485eea51cd7ad9e8239a",
+    "session_manifest.csv": "ba4dd86c051985d808c25068bac1826787291e4ecff5d145130649c307af033c",
+    "temporal_feasibility.csv": "65d609cf772ca5f16bdc2266fed3363ede4d48428c6730c444f444b9e0d225bc"
+  },
+  "assignment_algorithm": "exact per-fold sex quotas plus deterministic greedy protocol-origin balancing",
+  "contract_version": "0.4.0",
+  "dataset": "Wearable Device Dataset from Induced Stress and Structured Exercise Sessions v1.0.1",
+  "fold_summary": {
+    "0": {
+      "calibration": {
+        "aerobic_eligible_origins": 73,
+        "aerobic_sessions": 6,
+        "anaerobic_eligible_origins": 50,
+        "anaerobic_sessions": 6,
+        "cross_protocol_eligible": 5,
+        "female": 2,
+        "male": 3,
+        "participants": 5
+      },
+      "test": {
+        "aerobic_eligible_origins": 105,
+        "aerobic_sessions": 7,
+        "anaerobic_eligible_origins": 59,
+        "anaerobic_sessions": 7,
+        "cross_protocol_eligible": 7,
+        "female": 3,
+        "male": 4,
+        "participants": 7
+      },
+      "train": {
+        "aerobic_eligible_origins": 214,
+        "aerobic_sessions": 14,
+        "anaerobic_eligible_origins": 156,
+        "anaerobic_sessions": 15,
+        "cross_protocol_eligible": 13,
+        "female": 6,
+        "male": 9,
+        "participants": 15
+      },
+      "validation": {
+        "aerobic_eligible_origins": 63,
+        "aerobic_sessions": 4,
+        "anaerobic_eligible_origins": 54,
+        "anaerobic_sessions": 4,
+        "cross_protocol_eligible": 4,
+        "female": 2,
+        "male": 2,
+        "participants": 4
+      }
+    },
+    "1": {
+      "calibration": {
+        "aerobic_eligible_origins": 78,
+        "aerobic_sessions": 5,
+        "anaerobic_eligible_origins": 39,
+        "anaerobic_sessions": 5,
+        "cross_protocol_eligible": 5,
+        "female": 2,
+        "male": 3,
+        "participants": 5
+      },
+      "test": {
+        "aerobic_eligible_origins": 87,
+        "aerobic_sessions": 6,
+        "anaerobic_eligible_origins": 76,
+        "anaerobic_sessions": 6,
+        "cross_protocol_eligible": 6,
+        "female": 3,
+        "male": 3,
+        "participants": 6
+      },
+      "train": {
+        "aerobic_eligible_origins": 229,
+        "aerobic_sessions": 16,
+        "anaerobic_eligible_origins": 156,
+        "anaerobic_sessions": 17,
+        "cross_protocol_eligible": 14,
+        "female": 6,
+        "male": 10,
+        "participants": 16
+      },
+      "validation": {
+        "aerobic_eligible_origins": 61,
+        "aerobic_sessions": 4,
+        "anaerobic_eligible_origins": 48,
+        "anaerobic_sessions": 4,
+        "cross_protocol_eligible": 4,
+        "female": 2,
+        "male": 2,
+        "participants": 4
+      }
+    },
+    "2": {
+      "calibration": {
+        "aerobic_eligible_origins": 68,
+        "aerobic_sessions": 6,
+        "anaerobic_eligible_origins": 57,
+        "anaerobic_sessions": 5,
+        "cross_protocol_eligible": 5,
+        "female": 2,
+        "male": 3,
+        "participants": 5
+      },
+      "test": {
+        "aerobic_eligible_origins": 98,
+        "aerobic_sessions": 6,
+        "anaerobic_eligible_origins": 58,
+        "anaerobic_sessions": 6,
+        "cross_protocol_eligible": 6,
+        "female": 3,
+        "male": 3,
+        "participants": 6
+      },
+      "train": {
+        "aerobic_eligible_origins": 227,
+        "aerobic_sessions": 15,
+        "anaerobic_eligible_origins": 165,
+        "anaerobic_sessions": 16,
+        "cross_protocol_eligible": 14,
+        "female": 6,
+        "male": 10,
+        "participants": 16
+      },
+      "validation": {
+        "aerobic_eligible_origins": 62,
+        "aerobic_sessions": 4,
+        "anaerobic_eligible_origins": 39,
+        "anaerobic_sessions": 5,
+        "cross_protocol_eligible": 4,
+        "female": 2,
+        "male": 2,
+        "participants": 4
+      }
+    },
+    "3": {
+      "calibration": {
+        "aerobic_eligible_origins": 77,
+        "aerobic_sessions": 5,
+        "anaerobic_eligible_origins": 47,
+        "anaerobic_sessions": 5,
+        "cross_protocol_eligible": 5,
+        "female": 2,
+        "male": 3,
+        "participants": 5
+      },
+      "test": {
+        "aerobic_eligible_origins": 71,
+        "aerobic_sessions": 6,
+        "anaerobic_eligible_origins": 66,
+        "anaerobic_sessions": 6,
+        "cross_protocol_eligible": 4,
+        "female": 2,
+        "male": 4,
+        "participants": 6
+      },
+      "train": {
+        "aerobic_eligible_origins": 247,
+        "aerobic_sessions": 16,
+        "anaerobic_eligible_origins": 161,
+        "anaerobic_sessions": 17,
+        "cross_protocol_eligible": 16,
+        "female": 7,
+        "male": 9,
+        "participants": 16
+      },
+      "validation": {
+        "aerobic_eligible_origins": 60,
+        "aerobic_sessions": 4,
+        "anaerobic_eligible_origins": 45,
+        "anaerobic_sessions": 4,
+        "cross_protocol_eligible": 4,
+        "female": 2,
+        "male": 2,
+        "participants": 4
+      }
+    },
+    "4": {
+      "calibration": {
+        "aerobic_eligible_origins": 72,
+        "aerobic_sessions": 5,
+        "anaerobic_eligible_origins": 60,
+        "anaerobic_sessions": 5,
+        "cross_protocol_eligible": 5,
+        "female": 2,
+        "male": 3,
+        "participants": 5
+      },
+      "test": {
+        "aerobic_eligible_origins": 94,
+        "aerobic_sessions": 6,
+        "anaerobic_eligible_origins": 60,
+        "anaerobic_sessions": 7,
+        "cross_protocol_eligible": 6,
+        "female": 2,
+        "male": 4,
+        "participants": 6
+      },
+      "train": {
+        "aerobic_eligible_origins": 227,
+        "aerobic_sessions": 15,
+        "anaerobic_eligible_origins": 156,
+        "anaerobic_sessions": 16,
+        "cross_protocol_eligible": 14,
+        "female": 7,
+        "male": 9,
+        "participants": 16
+      },
+      "validation": {
+        "aerobic_eligible_origins": 62,
+        "aerobic_sessions": 5,
+        "anaerobic_eligible_origins": 43,
+        "anaerobic_sessions": 4,
+        "cross_protocol_eligible": 4,
+        "female": 2,
+        "male": 2,
+        "participants": 4
+      }
+    }
+  },
+  "freeze_date": "2026-07-31",
+  "highest_partition_unit": "base participant identifier",
+  "history_rule": "same participant and history end strictly before target start; regime legality recorded separately",
+  "manuscript_title": "Deployment-Aware Evaluation of Physiology-Guided Heart-Rate Transition Forecasting under User and Activity Shifts",
+  "outer_folds": 5,
+  "participants": 31,
+  "revision_rule": "Never overwrite v4 after fitting; create v5 for any later approved revision.",
+  "seed": 20260731,
+  "source_columns": [
+    "protocol",
+    "session_id",
+    "user_id",
+    "version",
+    "is_split_fragment",
+    "hr_start",
+    "hr_seconds",
+    "hr_duration_minutes",
+    "tag_count",
+    "tags_within_hr_record",
+    "eligible_dense_origins",
+    "eligible_stride_120s_origins",
+    "joint_hr_acc_supported_seconds",
+    "joint_hr_acc_support_percent",
+    "joint_qc_hr_valid_percent",
+    "common_support_start",
+    "common_support_end",
+    "acc_covers_hr",
+    "hr_raw_valid_percent",
+    "hr_qc_valid_percent",
+    "hr_local_outlier_seconds",
+    "hr_jump_gt20_seconds",
+    "ibi_rows",
+    "ibi_valid_percent",
+    "ibi_matched_seconds",
+    "ibi_hr_median_absolute_difference_bpm",
+    "ibi_hr_within_10_bpm_percent",
+    "acc_start",
+    "acc_start_epoch",
+    "acc_sample_rate_hz",
+    "acc_samples",
+    "acc_duration_seconds",
+    "acc_valid_row_percent",
+    "acc_saturated_value_percent",
+    "acc_second_bins",
+    "acc_valid_second_bin_percent"
+  ],
+  "source_sha256": {
+    "data/raw/wearable_exercise/s3_subset/Wearable_Dataset/subject-info.csv": "5468386126b78d2876118ef33c18f2f889fb34d8ae70a0a6dd6078a548783800",
+    "outputs/wearable_exercise_audit/session_summary.csv": "a2300013c53bef8025e80b51d80c75b0fa57f4be7aece499e47fb70601c723ef"
+  },
+  "temporal_split_status": "feasibility recorded; no invalid four-way per-user split is fabricated when sessions are insufficient",
+  "test_origin_max_min_ratio": 1.197080291970803,
+  "v3_status": "preserved and not overwritten"
+}

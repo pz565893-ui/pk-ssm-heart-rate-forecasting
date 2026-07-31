@@ -1,0 +1,29 @@
+{
+  "checks": {
+    "each_participant_has_one_role_per_fold": true,
+    "each_participant_is_test_once": true,
+    "every_test_fold_contains_both_sexes": true,
+    "history_is_strictly_chronological": true,
+    "test_origin_max_min_ratio_le_1_5": true,
+    "test_sex_counts_differ_by_at_most_one": true
+  },
+  "contract_version": "0.4.0",
+  "history_pairs": 160,
+  "test_origin_max_min_ratio": 1.197080291970803,
+  "test_sex_quotas": {
+    "female": [
+      3,
+      3,
+      3,
+      2,
+      2
+    ],
+    "male": [
+      4,
+      3,
+      3,
+      4,
+      4
+    ]
+  }
+}
