@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pk-ssm-heart-rate-forecasting"
+version = "1.0.0"
+description = "Personalized kinetic state-space heart-rate transition forecasting"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "numpy>=2.0",
+  "pandas>=2.2",
+  "scipy>=1.14",
+  "scikit-learn>=1.5",
+  "xgboost>=2.1",
+  "matplotlib>=3.9",
+  "torch>=2.6",
+]
+
+[tool.setuptools.packages.find]
+include = ["transition_forecasting*", "scripts*"]
