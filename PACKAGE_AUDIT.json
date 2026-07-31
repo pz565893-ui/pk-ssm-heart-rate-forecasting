@@ -1,24 +1,26 @@
 {
-  "package": "pk_ssm_heart_rate_forecasting_v1.0.0",
-  "built_on": "2026-08-01",
-  "status": "passed",
-  "file_count_before_manifest": 137,
-  "total_bytes_before_manifest": 3740738,
-  "checks": [
-    "explicit allowlist only",
-    "no forbidden cache/checkpoint formats",
-    "no file above 20 MiB",
-    "no absolute Windows or user-profile paths in text files",
-    "no obvious embedded credentials",
-    "no participant/session/user/subject/origin/workout identifier fields in CSV or JSON"
-  ],
-  "deliberately_excluded": [
-    "raw wearable records",
-    "participant- and session-level split manifests",
-    "cached tensors and arrays",
-    "model checkpoints",
-    "per-origin and per-participant predictions",
-    "local environment files and machine paths"
-  ],
-  "issues": []
+    "package":  "pk_ssm_heart_rate_forecasting_v1.0.1",
+    "built_on":  "2026-08-01",
+    "status":  "passed",
+    "file_count_before_manifest":  137,
+    "total_bytes_before_manifest":  3794278,
+    "checks":  [
+                   "explicit allowlist only",
+                   "no forbidden cache/checkpoint formats",
+                   "no file above 20 MiB",
+                   "no absolute Windows or user-profile paths in text files",
+                   "no obvious embedded credentials",
+                   "no participant/session/user/subject/origin/workout identifier fields in CSV or JSON"
+               ],
+    "deliberately_excluded":  [
+                                  "raw wearable records",
+                                  "participant- and session-level split manifests",
+                                  "cached tensors and arrays",
+                                  "model checkpoints",
+                                  "per-origin and per-participant predictions",
+                                  "local environment files and machine paths"
+                              ],
+    "issues":  [
+
+               ]
 }

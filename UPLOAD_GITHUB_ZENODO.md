@@ -20,7 +20,7 @@
 
 1. Sign in to Zenodo and enable the GitHub integration for the repository before
    publishing the first GitHub release.
-2. On GitHub, create release tag `v1.0.0`, use a descriptive release title, and
+2. On GitHub, create release tag `v1.0.1`, use a descriptive release title, and
    attach the provided ZIP as an optional convenience artifact.
 3. Allow Zenodo to archive the release, then complete the metadata using the two
    authors and the manuscript title in `CITATION.cff`.

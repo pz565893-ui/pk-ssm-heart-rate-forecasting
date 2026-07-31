@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "pk-ssm-heart-rate-forecasting"
-version = "1.0.0"
+version = "1.0.1"
 description = "Personalized kinetic state-space heart-rate transition forecasting"
 readme = "README.md"
 requires-python = ">=3.10"

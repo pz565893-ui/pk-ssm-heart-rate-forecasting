@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "If you use this software, please cite the associated manuscript."
 title: "PK-SSM heart-rate transition forecasting"
 type: software
-version: 1.0.0
+version: 1.0.1
 repository-code: "https://github.com/pz565893-ui/pk-ssm-heart-rate-forecasting"
 license: MIT
 authors:
