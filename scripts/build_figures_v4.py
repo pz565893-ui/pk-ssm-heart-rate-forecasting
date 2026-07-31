@@ -166,13 +166,18 @@ def figure1() -> None:
     ax.add_patch(patches.FancyBboxPatch((0, 0.28), 120, 0.34,
                                         boxstyle="round,pad=0.02", facecolor=PALE_ORANGE,
                                         edgecolor=TCN, linewidth=1))
-    ax.axvline(0, ymin=0.16, ymax=0.79, color=INK, lw=1.2)
+    ax.axvline(0, ymin=0.25, ymax=0.76, color=INK, lw=1.2)
     ax.text(-150, 0.45, "Causal context\nHR + acceleration summaries", ha="center", va="center", fontsize=7)
     ax.text(60, 0.45, "Forecast every second\nfor 120 s", ha="center", va="center", fontsize=7)
     ax.text(-300, 0.18, "-300 s", ha="center")
-    ax.text(0, 0.18, "transition origin", ha="center", fontweight="bold")
+    ax.text(0, 0.16, "transition origin", ha="center", va="center", fontweight="bold")
     ax.text(120, 0.18, "+120 s", ha="center")
-    ax.text(0, 0.78, "No future signal crosses the origin", ha="center", color=RED, fontweight="bold")
+    ax.annotate(
+        "No future signal crosses the origin",
+        xy=(0, 0.77), xytext=(-18, 0.84),
+        ha="right", va="center", color=RED, fontweight="bold",
+        arrowprops={"arrowstyle": "-", "color": RED, "lw": 0.8},
+    )
     panel_label(ax, "a", x=-0.01, y=0.93)
 
     ax = fig.add_subplot(gs[1, 0])
@@ -455,9 +460,13 @@ def figure3() -> None:
     write_source(unc, "figure3c_d_uncertainty.csv")
     write_source(high, "figure3e_high_hr_error.csv")
 
-    fig = plt.figure(figsize=(183 * MM, 163 * MM), constrained_layout=True)
-    gs = fig.add_gridspec(2, 4, height_ratios=[1.1, 1.0], hspace=0.25, wspace=0.32)
-    legend_ax = fig.add_subplot(gs[0, 3])
+    fig = plt.figure(figsize=(183 * MM, 178 * MM), constrained_layout=True)
+    outer = fig.add_gridspec(2, 1, height_ratios=[1.0, 1.08], hspace=0.34)
+    top = outer[0].subgridspec(1, 4, wspace=0.34)
+    bottom = outer[1].subgridspec(
+        1, 4, width_ratios=[1.65, 1.0, 1.65, 1.05], wspace=0.48
+    )
+    legend_ax = fig.add_subplot(top[0, 3])
     legend_ax.axis("off")
     legend_ax.legend(handles=[
         Line2D([0], [0], color=INK, lw=1.5, label="Observed"),
@@ -467,7 +476,7 @@ def figure3() -> None:
     legend_ax.text(0.5, 0.18, "Cases fixed by q25, q50 and q75\nof combined per-origin MAE",
                    ha="center", va="center", fontsize=6, color=MID)
     for i, case in enumerate(["q25", "q50", "q75"]):
-        ax = fig.add_subplot(gs[0, i])
+        ax = fig.add_subplot(top[0, i])
         d = traces[traces.case == case]
         ax.plot(d.time_s, d.observed_hr_bpm, color=INK, lw=1.35)
         ax.plot(d.time_s, d.pk_ssm_hr_bpm, color=PK, lw=1.45)
@@ -485,7 +494,7 @@ def figure3() -> None:
         ax.set_title(f"{case.upper()} | MAE {err:.1f} bpm", fontweight="bold")
         clean_axis(ax)
 
-    ax = fig.add_subplot(gs[1, 0])
+    ax = fig.add_subplot(bottom[0, 0])
     labels = ["Total variation", "Rapid-change amplitude"]
     y = np.arange(2)
     for model, color, offset in (("pk_ssm", PK, 0.10), ("tcn", TCN, -0.10)):
@@ -496,14 +505,14 @@ def figure3() -> None:
             ax.text(value * 1.08, yy, f"{value:.2f}", va="center", fontsize=5.5, color=color)
     ax.axvline(1, color=MID, ls="--", lw=0.9)
     ax.set_xscale("log")
+    ax.set_xlim(0.08, 12.5)
     ax.set_yticks(y)
     ax.set_yticklabels(labels)
     ax.set_xlabel("Predicted / observed ratio (log scale)")
-    ax.set_title("Dynamic under-response", fontweight="bold")
+    ax.set_title("b    Dynamic under-response", loc="center", y=1.22, fontweight="bold")
     clean_axis(ax)
-    panel_label(ax, "b", y=1.10)
 
-    ax = fig.add_subplot(gs[1, 1])
+    ax = fig.add_subplot(bottom[0, 1])
     horizons = [30, 60, 120]
     for model, color, marker in (("pk_ssm", PK, "o"), ("tcn", TCN, "s")):
         row = unc[(unc.model == model) & (unc.interval_type == "origin_level")].iloc[0]
@@ -514,26 +523,35 @@ def figure3() -> None:
     ax.set_ylim(0.91, 0.96)
     ax.set_xlabel("Forecast horizon (s)")
     ax.set_ylabel("Marginal coverage")
-    ax.set_title("Coverage", fontweight="bold")
+    ax.set_title("c    Coverage", loc="center", y=1.22, fontweight="bold")
     clean_axis(ax)
-    panel_label(ax, "c", y=1.10)
 
-    ax = fig.add_subplot(gs[1, 2])
+    ax = fig.add_subplot(bottom[0, 2])
     for model, color in (("pk_ssm", PK), ("tcn", TCN)):
         for interval, ls, marker in (("origin_level", "-", "o"), ("participant_block", ":", "^")):
             row = unc[(unc.model == model) & (unc.interval_type == interval)].iloc[0]
             vals = [row[f"mean_width_{h}s_bpm"] for h in horizons]
-            label = f"{model_label(model)}, {'origin' if interval == 'origin_level' else 'participant block'}"
-            ax.plot(horizons, vals, color=color, ls=ls, marker=marker, lw=1.3, ms=3.5, label=label)
+            ax.plot(horizons, vals, color=color, ls=ls, marker=marker, lw=1.3, ms=3.5)
     ax.set_xticks(horizons)
     ax.set_xlabel("Forecast horizon (s)")
     ax.set_ylabel("Full interval width (beats/min)")
-    ax.set_title("Interval width", fontweight="bold")
-    ax.legend(fontsize=5.3, loc="upper left")
+    ax.set_title("d    Interval width", loc="center", y=1.22, fontweight="bold")
+    interval_handles = [
+        Line2D([0], [0], color=PK, lw=1.4, label="PK-SSM"),
+        Line2D([0], [0], color=TCN, lw=1.4, label="TCN"),
+        Line2D([0], [0], color=INK, lw=1.2, ls="-", marker="o", ms=3,
+               label="Origin-level"),
+        Line2D([0], [0], color=INK, lw=1.2, ls=":", marker="^", ms=3,
+               label="Participant block"),
+    ]
+    ax.legend(
+        handles=interval_handles, fontsize=4.8, loc="lower center",
+        bbox_to_anchor=(0.5, 1.01), ncol=2, borderaxespad=0,
+        columnspacing=0.8, handletextpad=0.4,
+    )
     clean_axis(ax)
-    panel_label(ax, "d", y=1.10)
 
-    ax = fig.add_subplot(gs[1, 3])
+    ax = fig.add_subplot(bottom[0, 3])
     x = np.arange(2)
     width = 0.34
     for offset, model, color in ((-width / 2, "pk_ssm", PK), (width / 2, "tcn", TCN)):
@@ -547,10 +565,12 @@ def figure3() -> None:
     ax.set_xticklabels(["Fold p90", "Fixed 160"], rotation=28, ha="right", fontsize=4.8)
     ax.set_ylim(18.6, 20.7)
     ax.set_ylabel("MAE (beats/min)")
-    ax.set_title("High-HR MAE", fontweight="bold")
-    ax.legend(loc="lower left", fontsize=5.5)
+    ax.set_title("e    High-HR MAE", loc="center", y=1.22, fontweight="bold")
+    ax.legend(
+        loc="lower center", bbox_to_anchor=(0.5, 1.01), ncol=2,
+        fontsize=5.0, borderaxespad=0, columnspacing=0.7, handletextpad=0.4,
+    )
     clean_axis(ax)
-    panel_label(ax, "e", y=1.10)
     save_bundle(fig, "Figure_3_dynamics_and_uncertainty")
 
 
@@ -688,17 +708,20 @@ def figure5() -> None:
                                       ("future_mean_hr", TCN, 0.11, "Future mean HR")):
         vals = [selected_corr[(selected_corr.parameter == p) &
                               (selected_corr.covariate == cov)].spearman_rho.iloc[0] for p in parameters]
-        ax.barh(y + offset, vals, height=0.20, color=color, label=label)
+        ax.barh(y + offset, vals, height=0.20, color=color)
         for yy, value in zip(y + offset, vals):
             ax.text(value + (0.03 if value >= 0 else -0.03), yy, f"{value:.2f}",
                     va="center", ha="left" if value >= 0 else "right", fontsize=5.7, color=color)
+            ax.text(0.04 if value >= 0 else -0.04, yy, label,
+                    va="center", ha="left" if value >= 0 else "right",
+                    fontsize=4.8, fontweight="bold",
+                    color="white" if color == PK else INK)
     ax.axvline(0, color=MID, lw=0.8)
     ax.set_yticks(y)
     ax.set_yticklabels([PARAM_LABELS[p] for p in parameters])
-    ax.set_xlim(-1.05, 1.05)
+    ax.set_xlim(-1.12, 1.12)
     ax.set_xlabel("Spearman rho")
     ax.set_title("Latents re-encode heart-rate level", fontweight="bold")
-    ax.legend(loc="lower right")
     clean_axis(ax)
     panel_label(ax, "a")
 
