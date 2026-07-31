@@ -1,0 +1,98 @@
+{
+  "artifact_status": "pretraining_candidate_grid",
+  "manuscript_title": "Deployment-Aware Evaluation of Physiology-Guided Heart-Rate Transition Forecasting under User and Activity Shifts",
+  "target_journal": "Biomedical Signal Processing and Control",
+  "contract_version": "0.4.0",
+  "data_split_status": "v4 sex-constrained split authorized; v3 remains frozen and v4 must be generated before new fitting",
+  "selection_rule": {
+    "eligible_information": "validation users only",
+    "primary_metric": "participant-aggregated transition trajectory MAE",
+    "tie_breakers_in_order": [
+      "absolute log total-variation ratio",
+      "absolute lag error",
+      "validation Student-t negative log likelihood",
+      "smaller parameter count"
+    ],
+    "test_set_access": "one evaluation after architecture and calibration freeze",
+    "seed_selection_by_test_performance": false
+  },
+  "fixed_task": {
+    "context_seconds": 300,
+    "horizon_seconds": 120,
+    "temporal_resolution_seconds": 1,
+    "reported_horizons_seconds": [30, 60, 120],
+    "training_origin_stride_seconds": 10,
+    "evaluation_origin_stride_seconds": 120,
+    "future_observed_hr_allowed": false,
+    "future_observed_acceleration_allowed": false,
+    "history_regimes": ["none", "train_prior", "role_prior", "all_prior"],
+    "history_session_budgets": [0, 1, 3, 5, -1],
+    "history_seconds_per_session": 300,
+    "strict_unseen_user_history_regime": "train_prior",
+    "few_shot_user_history_regime": "role_prior"
+  },
+  "model_candidates": [
+    {
+      "candidate_id": "pkssm_48x4_r4",
+      "hidden_dim": 48,
+      "convolution_dilations": [1, 2, 4, 8],
+      "dropout": 0.10,
+      "residual_bound_bpm": 4.0
+    },
+    {
+      "candidate_id": "pkssm_64x4_r6",
+      "hidden_dim": 64,
+      "convolution_dilations": [1, 2, 4, 8],
+      "dropout": 0.10,
+      "residual_bound_bpm": 6.0
+    },
+    {
+      "candidate_id": "pkssm_64x5_r6",
+      "hidden_dim": 64,
+      "convolution_dilations": [1, 2, 4, 8, 16],
+      "dropout": 0.10,
+      "residual_bound_bpm": 6.0
+    },
+    {
+      "candidate_id": "pkssm_96x4_r6",
+      "hidden_dim": 96,
+      "convolution_dilations": [1, 2, 4, 8],
+      "dropout": 0.10,
+      "residual_bound_bpm": 6.0
+    },
+    {
+      "candidate_id": "pkssm_64x4_r8",
+      "hidden_dim": 64,
+      "convolution_dilations": [1, 2, 4, 8],
+      "dropout": 0.15,
+      "residual_bound_bpm": 8.0
+    }
+  ],
+  "fixed_physiological_bounds": {
+    "hr_bpm": [30.0, 220.0],
+    "rest_hr_bpm": [35.0, 120.0],
+    "fast_tau_seconds": [1.0, 120.0],
+    "slow_tau_upper_seconds": 600.0,
+    "fast_tau_strictly_less_than_slow_tau": true,
+    "nonnegative_workload_gains": true,
+    "separate_rise_and_recovery_constants": true,
+    "direct_smoothness_penalty": false
+  },
+  "optimization_candidates": {
+    "optimizer": "AdamW",
+    "learning_rate": [0.001, 0.0003],
+    "weight_decay": [0.0001],
+    "batch_size": [64],
+    "maximum_epochs": 150,
+    "early_stopping_patience": 15,
+    "gradient_norm_clip": 1.0,
+    "training_seeds": [20260730, 20260731, 20260732, 20260733, 20260734]
+  },
+  "uncertainty": {
+    "distribution": "heteroscedastic Student-t",
+    "nominal_coverage": 0.95,
+    "pointwise_horizons_seconds": [30, 60, 120],
+    "simultaneous_score": "maximum normalized absolute residual over 120 seconds",
+    "calibration_users_disjoint_from_training_validation_and_test": true
+  }
+}
