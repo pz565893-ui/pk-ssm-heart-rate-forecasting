@@ -1,0 +1,5 @@
+policy,parameter,covariate,spearman_rho,interpretation
+tagged_events,hr_reserve,current_hr,-0.807828954970748,exploratory_noncausal
+tagged_events,hr_reserve,future_mean_hr,-0.6735522728820523,exploratory_noncausal
+tagged_events,rest_hr,current_hr,0.9710743676259058,exploratory_noncausal
+tagged_events,rest_hr,future_mean_hr,0.8230421113634425,exploratory_noncausal

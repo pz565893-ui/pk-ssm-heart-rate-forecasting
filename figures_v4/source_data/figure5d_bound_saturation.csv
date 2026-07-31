@@ -1,0 +1,11 @@
+parameter,near_lower_fraction,near_upper_fraction
+feasible_max_hr,0.0,0.0
+gain_fast,0.0,
+gain_slow,0.0,
+hr_reserve,0.0,0.0
+initial_fast_fraction,0.0,0.0
+rest_hr,0.0,0.0
+tau_fast_recovery,0.0,0.0
+tau_fast_rise,0.0,0.0
+tau_slow_recovery,,0.0
+tau_slow_rise,,0.0

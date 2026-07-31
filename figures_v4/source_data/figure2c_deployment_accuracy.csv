@@ -1,0 +1,5 @@
+policy,model,participants,trajectory_mae_bpm
+tagged_events,pk_ssm,31,9.994184323144909
+tagged_events,tcn,31,9.949011839798144
+evaluation_stride,pk_ssm,31,8.789110132152873
+evaluation_stride,tcn,31,8.491227048867858

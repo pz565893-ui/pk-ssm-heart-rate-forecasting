@@ -1,0 +1,7 @@
+model,horizon_s,mae_bpm,participants,seed_policy
+pk_ssm,30,5.777936129922502,31,five-seed arithmetic ensemble
+pk_ssm,60,10.9124117307013,31,five-seed arithmetic ensemble
+pk_ssm,120,16.46996623705045,31,five-seed arithmetic ensemble
+tcn,30,5.5533565263392255,31,five-seed arithmetic ensemble
+tcn,60,10.743378820925155,31,five-seed arithmetic ensemble
+tcn,120,16.691777373890975,31,five-seed arithmetic ensemble

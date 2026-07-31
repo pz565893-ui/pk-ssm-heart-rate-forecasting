@@ -1,0 +1,4 @@
+case,selection_quantile,combined_origin_mae_bpm
+q25,0.25,3.9131927808125813
+q50,0.5,7.378147843678792
+q75,0.75,13.08356774012248

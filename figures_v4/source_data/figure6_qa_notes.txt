@@ -1,0 +1,9 @@
+Figure 6 source and export audit
+Locked summary SHA-256: 48965252b1dd8b8dba50422b976c6b2abd5199f59d379291fcbbe5e95da99142
+Core conclusion: Activity-shift effects are direction-dependent, primary-policy trajectory differences between PK-SSM and TCN are not supported at the joint boundary, and transported intervals can be very wide while still under-covering held-out anaerobic activity.
+Archetype: quantitative grid
+Backend: Python/matplotlib only
+Final nominal size: 7.2 x 6.15 inches (double-column)
+Statistics: five outer folds, five locked seeds, 10,000 participant bootstrap replicates, paired Wilcoxon tests in source tables
+Privacy: no participant or session identifiers are exported
+Exports: editable SVG, editable-font PDF, 300 dpi PNG, 600 dpi LZW TIFF

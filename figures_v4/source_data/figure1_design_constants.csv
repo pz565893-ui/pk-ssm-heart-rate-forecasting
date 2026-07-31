@@ -1,0 +1,7 @@
+element,value
+context_length_s,300
+forecast_horizon_s,120
+input_features,18
+hidden_channels,64
+residual_bound_bpm,6
+outer_folds,5

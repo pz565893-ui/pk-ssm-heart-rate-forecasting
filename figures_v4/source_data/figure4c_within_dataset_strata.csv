@@ -1,0 +1,9 @@
+policy,model,field,label,origins,participants,participant_macro_mae_bpm,inferential_status
+tagged_events,pk_ssm,protocol,AEROBIC,582,28,9.331318084020014,eligible
+tagged_events,pk_ssm,protocol,ANAEROBIC,120,7,11.400291187613664,eligible
+tagged_events,tcn,protocol,AEROBIC,582,28,9.279017233443856,eligible
+tagged_events,tcn,protocol,ANAEROBIC,120,7,11.784185806047146,eligible
+evaluation_stride,pk_ssm,protocol,AEROBIC,449,28,6.334365726371793,eligible
+evaluation_stride,pk_ssm,protocol,ANAEROBIC,90,7,5.995418210325475,eligible
+evaluation_stride,tcn,protocol,AEROBIC,449,28,6.451549979533939,eligible
+evaluation_stride,tcn,protocol,ANAEROBIC,90,7,5.934662754160674,eligible
