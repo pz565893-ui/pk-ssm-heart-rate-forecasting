@@ -1,0 +1,39 @@
+# Raw or restricted data
+data/
+raw_data/
+downloads/
+private_manifests/
+*participant_manifest*.csv
+*session_manifest*.csv
+*history_manifest*.csv
+*role_manifest*.csv
+
+# Derived large or individual-level artifacts
+cache/
+caches/
+checkpoints/
+predictions/
+forecasts/
+*.npy
+*.npz
+*.parquet
+*.pkl
+*.pickle
+*.joblib
+*.pt
+*.pth
+*.ckpt
+
+# Python and local environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+
+# Editors and operating systems
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
