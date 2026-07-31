@@ -163,6 +163,8 @@ README = """# PK-SSM heart-rate transition forecasting
 
 This repository accompanies the manuscript **Deployment-Aware Evaluation of Physiology-Guided Heart-Rate Transition Forecasting under User and Activity Shifts**, prepared for *Biomedical Signal Processing and Control*.
 
+Public repository: https://github.com/pz565893-ui/pk-ssm-heart-rate-forecasting
+
 ## Scope
 
 The repository contains the PK-SSM implementation, comparator models, the locked
@@ -234,12 +236,15 @@ allowlist, privacy checks, file sizes, and cryptographic hashes used for this
 release. The release builder is included at
 `tools/build_public_release_package_v4.py`.
 
-## Citation and license
+## Citation
 
-Use `CITATION.cff` for author and manuscript metadata. Add the final GitHub URL
-and Zenodo DOI after archiving the release. No software license has been selected
-yet; the corresponding author must choose one before public distribution. See
-`LICENSE_SELECTION_REQUIRED.md`.
+Use `CITATION.cff` for author and manuscript metadata. Add the Zenodo DOI after
+archiving the release.
+
+## License
+
+The software in this repository is released under the MIT License. Dataset terms
+remain governed by the original data providers. See `LICENSE`.
 """
 
 
@@ -301,9 +306,8 @@ UPLOAD_GUIDE = """# GitHub and Zenodo upload guide
 
 ## Before uploading
 
-1. Select a software license. MIT is the simplest permissive option for research
-   code, but the corresponding author must make the legal choice.
-2. Open `PACKAGE_AUDIT.json` and confirm that `status` is `passed`.
+1. Open `PACKAGE_AUDIT.json` and confirm that `status` is `passed`.
+2. Confirm that the included `LICENSE` file identifies the MIT License.
 3. Upload the **contents** of this folder as the repository root. Do not upload
    the outer release-package directory or any original project directory.
 
@@ -339,6 +343,8 @@ message: "If you use this software, please cite the associated manuscript."
 title: "PK-SSM heart-rate transition forecasting"
 type: software
 version: 1.0.0
+repository-code: "https://github.com/pz565893-ui/pk-ssm-heart-rate-forecasting"
+license: MIT
 authors:
   - family-names: "Pang"
     given-names: "Keren"
@@ -372,6 +378,7 @@ version = "1.0.0"
 description = "Personalized kinetic state-space heart-rate transition forecasting"
 readme = "README.md"
 requires-python = ">=3.10"
+license = {text = "MIT"}
 dependencies = [
   "numpy>=2.0",
   "pandas>=2.2",
@@ -429,15 +436,27 @@ Thumbs.db
 """
 
 
-LICENSE_NOTE = """# License selection required
+MIT_LICENSE = """MIT License
 
-No software license is granted by this draft package. Before making the GitHub
-repository public, the corresponding author should select and add an appropriate
-license.
+Copyright (c) 2026 PANG KEREN and MIN CHANGRONG
 
-For maximum reuse with attribution, the recommended simple option is the MIT
-License. If stronger reciprocal sharing is desired, consider GPL-3.0. Dataset
-licenses and terms remain separate and are not changed by the software license.
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 """
 
 
@@ -619,7 +638,7 @@ def main() -> int:
     write_text("CITATION.cff", CITATION_CFF)
     write_text("pyproject.toml", PYPROJECT)
     write_text(".gitignore", PUBLIC_GITIGNORE)
-    write_text("LICENSE_SELECTION_REQUIRED.md", LICENSE_NOTE)
+    write_text("LICENSE", MIT_LICENSE)
 
     manifest, issues = audit_package()
     audit = {
