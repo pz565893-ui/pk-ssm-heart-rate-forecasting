@@ -1,0 +1,27 @@
+{
+  "artifact_status": "locked_kinetic_parameter_audit",
+  "interpretation": "Parameters are model-internal context-conditioned latent states and are not laboratory-validated physiological measurements.",
+  "parameters": [
+    "feasible_max_hr",
+    "gain_fast",
+    "gain_slow",
+    "hr_reserve",
+    "initial_fast_fraction",
+    "rest_hr",
+    "tau_fast_recovery",
+    "tau_fast_rise",
+    "tau_slow_recovery",
+    "tau_slow_rise"
+  ],
+  "policies": [
+    "tagged_events",
+    "evaluation_stride"
+  ],
+  "seeds": [
+    20260730,
+    20260731,
+    20260732,
+    20260733,
+    20260734
+  ]
+}

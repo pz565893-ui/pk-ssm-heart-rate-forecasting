@@ -1,0 +1,94 @@
+{
+  "evaluation_stride": {
+    "mae_120s_bpm": {
+      "bootstrap_95_ci": [
+        -0.7154974912921848,
+        0.17716340910635167
+      ],
+      "mean_pk_ssm_minus_tcn": -0.2733470418094811,
+      "participants": 30,
+      "pk_ssm_better_fraction": 0.6,
+      "tcn_better_fraction": 0.4,
+      "wilcoxon_p": 0.24494642950594425
+    },
+    "mae_30s_bpm": {
+      "bootstrap_95_ci": [
+        -0.15117155478151284,
+        0.17213796561579814
+      ],
+      "mean_pk_ssm_minus_tcn": 0.012981750139224054,
+      "participants": 30,
+      "pk_ssm_better_fraction": 0.5,
+      "tcn_better_fraction": 0.5,
+      "wilcoxon_p": 0.8078304156661034
+    },
+    "mae_60s_bpm": {
+      "bootstrap_95_ci": [
+        -0.2531606780989237,
+        0.08164673354371214
+      ],
+      "mean_pk_ssm_minus_tcn": -0.08383515301872686,
+      "participants": 30,
+      "pk_ssm_better_fraction": 0.5333333333333333,
+      "tcn_better_fraction": 0.4666666666666667,
+      "wilcoxon_p": 0.42795460671186447
+    },
+    "trajectory_mae_bpm": {
+      "bootstrap_95_ci": [
+        -0.21718248689338934,
+        0.06612108386350815
+      ],
+      "mean_pk_ssm_minus_tcn": -0.07068864239699642,
+      "participants": 30,
+      "pk_ssm_better_fraction": 0.6333333333333333,
+      "tcn_better_fraction": 0.36666666666666664,
+      "wilcoxon_p": 0.4521643426269293
+    }
+  },
+  "tagged_events": {
+    "mae_120s_bpm": {
+      "bootstrap_95_ci": [
+        -0.982654817525652,
+        0.19572084708946444
+      ],
+      "mean_pk_ssm_minus_tcn": -0.3687855684357102,
+      "participants": 30,
+      "pk_ssm_better_fraction": 0.6,
+      "tcn_better_fraction": 0.4,
+      "wilcoxon_p": 0.28936620615422726
+    },
+    "mae_30s_bpm": {
+      "bootstrap_95_ci": [
+        -0.23004909666997053,
+        0.28011716918396634
+      ],
+      "mean_pk_ssm_minus_tcn": 0.02316017821843448,
+      "participants": 30,
+      "pk_ssm_better_fraction": 0.4666666666666667,
+      "tcn_better_fraction": 0.5333333333333333,
+      "wilcoxon_p": 0.8393927440047264
+    },
+    "mae_60s_bpm": {
+      "bootstrap_95_ci": [
+        -0.4720115418133581,
+        0.17032578378516808
+      ],
+      "mean_pk_ssm_minus_tcn": -0.15592600036824653,
+      "participants": 30,
+      "pk_ssm_better_fraction": 0.5666666666666667,
+      "tcn_better_fraction": 0.43333333333333335,
+      "wilcoxon_p": 0.40449450351297855
+    },
+    "trajectory_mae_bpm": {
+      "bootstrap_95_ci": [
+        -0.34514270667866254,
+        0.15628183036529228
+      ],
+      "mean_pk_ssm_minus_tcn": -0.09429292385533715,
+      "participants": 30,
+      "pk_ssm_better_fraction": 0.5,
+      "tcn_better_fraction": 0.5,
+      "wilcoxon_p": 0.7000329215079546
+    }
+  }
+}

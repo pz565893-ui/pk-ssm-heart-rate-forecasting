@@ -1,0 +1,111 @@
+{
+  "artifact_status": "locked_goldencheetah_sport_summary",
+  "paired_inference": {
+    "evaluation_stride": {
+      "GC_BIKE": {
+        "bootstrap_95_ci": [
+          -0.26677757663461127,
+          0.1489456495280931
+        ],
+        "inferential_status": "eligible",
+        "mean_pk_ssm_minus_tcn_bpm": -0.05962334500478324,
+        "participants": 26,
+        "pk_ssm_better_fraction": 0.6538461538461539,
+        "tcn_better_fraction": 0.34615384615384615
+      },
+      "GC_INFERRED_BIKE_OTHER": {
+        "bootstrap_95_ci": [
+          -0.6269370082585783,
+          -0.19263048171997088
+        ],
+        "inferential_status": "descriptive_only",
+        "mean_pk_ssm_minus_tcn_bpm": -0.4097837449892746,
+        "participants": 2,
+        "pk_ssm_better_fraction": 1.0,
+        "tcn_better_fraction": 0.0
+      },
+      "GC_INFERRED_BIKE_SWIM": {
+        "bootstrap_95_ci": [
+          -0.2706083297729496,
+          -0.2706083297729496
+        ],
+        "inferential_status": "descriptive_only",
+        "mean_pk_ssm_minus_tcn_bpm": -0.2706083297729496,
+        "participants": 1,
+        "pk_ssm_better_fraction": 1.0,
+        "tcn_better_fraction": 0.0
+      },
+      "GC_RUN": {
+        "bootstrap_95_ci": [
+          -0.3292378294863568,
+          0.403699449990563
+        ],
+        "inferential_status": "eligible",
+        "mean_pk_ssm_minus_tcn_bpm": 0.06075545616480195,
+        "participants": 7,
+        "pk_ssm_better_fraction": 0.42857142857142855,
+        "tcn_better_fraction": 0.5714285714285714
+      }
+    },
+    "tagged_events": {
+      "GC_BIKE": {
+        "bootstrap_95_ci": [
+          -0.2578905403801024,
+          0.3567494032924652
+        ],
+        "inferential_status": "eligible",
+        "mean_pk_ssm_minus_tcn_bpm": 0.05706509232010921,
+        "participants": 26,
+        "pk_ssm_better_fraction": 0.4230769230769231,
+        "tcn_better_fraction": 0.5769230769230769
+      },
+      "GC_INFERRED_BIKE_OTHER": {
+        "bootstrap_95_ci": [
+          -1.0161392012713168,
+          0.23007143665273855
+        ],
+        "inferential_status": "descriptive_only",
+        "mean_pk_ssm_minus_tcn_bpm": -0.39303388230928915,
+        "participants": 2,
+        "pk_ssm_better_fraction": 0.5,
+        "tcn_better_fraction": 0.5
+      },
+      "GC_INFERRED_BIKE_SWIM": {
+        "bootstrap_95_ci": [
+          0.6211678028106675,
+          0.6211678028106675
+        ],
+        "inferential_status": "descriptive_only",
+        "mean_pk_ssm_minus_tcn_bpm": 0.6211678028106675,
+        "participants": 1,
+        "pk_ssm_better_fraction": 0.0,
+        "tcn_better_fraction": 1.0
+      },
+      "GC_RUN": {
+        "bootstrap_95_ci": [
+          -1.128836685200107,
+          0.37530568546164844
+        ],
+        "inferential_status": "eligible",
+        "mean_pk_ssm_minus_tcn_bpm": -0.3838946184334842,
+        "participants": 7,
+        "pk_ssm_better_fraction": 0.5714285714285714,
+        "tcn_better_fraction": 0.42857142857142855
+      }
+    }
+  },
+  "strictly_unseen_test_sports": [],
+  "test_sports": [
+    "GC_BIKE",
+    "GC_INFERRED_BIKE_OTHER",
+    "GC_INFERRED_BIKE_SWIM",
+    "GC_RUN"
+  ],
+  "train_sports": [
+    "GC_BIKE",
+    "GC_INFERRED_BIKE_OTHER",
+    "GC_INFERRED_BIKE_SWIM",
+    "GC_OTHER_OTHER",
+    "GC_RUN"
+  ]
+}
