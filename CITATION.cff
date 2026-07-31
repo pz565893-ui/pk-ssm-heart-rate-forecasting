@@ -3,6 +3,8 @@ message: "If you use this software, please cite the associated manuscript."
 title: "PK-SSM heart-rate transition forecasting"
 type: software
 version: 1.0.0
+repository-code: "https://github.com/pz565893-ui/pk-ssm-heart-rate-forecasting"
+license: MIT
 authors:
   - family-names: "Pang"
     given-names: "Keren"

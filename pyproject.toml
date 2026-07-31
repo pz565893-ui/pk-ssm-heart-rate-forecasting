@@ -8,6 +8,7 @@ version = "1.0.0"
 description = "Personalized kinetic state-space heart-rate transition forecasting"
 readme = "README.md"
 requires-python = ">=3.10"
+license = {text = "MIT"}
 dependencies = [
   "numpy>=2.0",
   "pandas>=2.2",

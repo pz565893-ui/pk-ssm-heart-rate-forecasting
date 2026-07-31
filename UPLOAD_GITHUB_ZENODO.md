@@ -2,9 +2,8 @@
 
 ## Before uploading
 
-1. Select a software license. MIT is the simplest permissive option for research
-   code, but the corresponding author must make the legal choice.
-2. Open `PACKAGE_AUDIT.json` and confirm that `status` is `passed`.
+1. Open `PACKAGE_AUDIT.json` and confirm that `status` is `passed`.
+2. Confirm that the included `LICENSE` file identifies the MIT License.
 3. Upload the **contents** of this folder as the repository root. Do not upload
    the outer release-package directory or any original project directory.
 

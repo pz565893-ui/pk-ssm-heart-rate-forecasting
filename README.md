@@ -2,6 +2,8 @@
 
 This repository accompanies the manuscript **Deployment-Aware Evaluation of Physiology-Guided Heart-Rate Transition Forecasting under User and Activity Shifts**, prepared for *Biomedical Signal Processing and Control*.
 
+Public repository: https://github.com/pz565893-ui/pk-ssm-heart-rate-forecasting
+
 ## Scope
 
 The repository contains the PK-SSM implementation, comparator models, the locked
@@ -73,9 +75,12 @@ allowlist, privacy checks, file sizes, and cryptographic hashes used for this
 release. The release builder is included at
 `tools/build_public_release_package_v4.py`.
 
-## Citation and license
+## Citation
 
-Use `CITATION.cff` for author and manuscript metadata. Add the final GitHub URL
-and Zenodo DOI after archiving the release. No software license has been selected
-yet; the corresponding author must choose one before public distribution. See
-`LICENSE_SELECTION_REQUIRED.md`.
+Use `CITATION.cff` for author and manuscript metadata. Add the Zenodo DOI after
+archiving the release.
+
+## License
+
+The software in this repository is released under the MIT License. Dataset terms
+remain governed by the original data providers. See `LICENSE`.

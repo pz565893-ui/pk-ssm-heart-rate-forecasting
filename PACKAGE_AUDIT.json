@@ -3,7 +3,7 @@
   "built_on": "2026-08-01",
   "status": "passed",
   "file_count_before_manifest": 137,
-  "total_bytes_before_manifest": 3739264,
+  "total_bytes_before_manifest": 3740738,
   "checks": [
     "explicit allowlist only",
     "no forbidden cache/checkpoint formats",
